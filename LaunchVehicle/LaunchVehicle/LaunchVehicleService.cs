@@ -18,20 +18,17 @@ namespace LaunchVehicle
         private static IDictionary<string, Thread> _threadLst = new Dictionary<string, Thread>();
         private static Random random = new Random();
         private ILaunchVehicleRepository _launchVehicleRepository;
-        private PayloadStartServiceClient psClient;
 
-        /* public LaunchVehicleService(ILaunchVehicleRepository launchVehicleRepository)
-         {
-             _launchVehicleRepository = launchVehicleRepository;
-         }*/
-
+        public LaunchVehicleService()
+        {
+            _launchVehicleRepository = WcfServiceFactory.GetLaunchVehicleRepository();
+        }
         public void AddVehicle(string path)
         {
             if (path == null)
             {
                 throw new FaultException<ServiceFault>(new ServiceFault("File is invalid, please check the file and try again"));
             }
-            _launchVehicleRepository = new LaunchVehicleRepository();
             LaunchVehicleDto launchVehicle = ReadConfigFile.GetVehicleDto(path);
             ILaunchVehicleCallbackService data = OperationContext.Current.GetCallbackChannel<ILaunchVehicleCallbackService>();
             if (!_callbackList.Contains(data))
@@ -50,7 +47,6 @@ namespace LaunchVehicle
 
         public void StartVehicle(string name)
         {
-            _launchVehicleRepository = new LaunchVehicleRepository();
             LaunchVehicleDto launchVehicle = _launchVehicleRepository.GetLaunchVehicleByName(name);
             ILaunchVehicleCallbackService data = OperationContext.Current.GetCallbackChannel<ILaunchVehicleCallbackService>();
             if (!_callbackList.Contains(data))
@@ -70,13 +66,11 @@ namespace LaunchVehicle
 
         public List<LaunchVehicleDto> GetVehicles()
         {
-            _launchVehicleRepository = new LaunchVehicleRepository();
             return _launchVehicleRepository.GetLaunchVehicles();
         }
 
         public void SendTelemetryRequest(string name, bool status)
         {
-            _launchVehicleRepository = new LaunchVehicleRepository();
             _launchVehicleRepository.GetLaunchVehicleByName(name).ShowTelemetry = status;
         }
 
@@ -84,7 +78,6 @@ namespace LaunchVehicle
         {
             while (true)
             {
-                _launchVehicleRepository = new LaunchVehicleRepository();
                 if (_launchVehicleRepository.GetLaunchVehicleByName(name).ShowTelemetry)
                 {
                     _callbackList[0].NotifyTelemetryData(new Dto.TelemetryDto
@@ -108,7 +101,6 @@ namespace LaunchVehicle
 
         public void DeployPayload(string name)
         {
-            _launchVehicleRepository = new LaunchVehicleRepository();
             LaunchVehicleDto launchVehicle = _launchVehicleRepository.GetLaunchVehicleByName(name);
             if (launchVehicle == null)
             {
@@ -129,7 +121,7 @@ namespace LaunchVehicle
             else
             {
                 launchVehicle.IsDeployed = true;
-                psClient = new PayloadStartServiceClient("NetTcpBinding_IPayloadStartService");
+                PayloadStartServiceClient psClient = new PayloadStartServiceClient("NetTcpBinding_IPayloadStartService");
                 psClient.Open();
                 psClient.StartPayload(launchVehicle.PayLoad);
             }
@@ -137,7 +129,6 @@ namespace LaunchVehicle
 
         public void DeorbitLaunchVehicle(string name)
         {
-            _launchVehicleRepository = new LaunchVehicleRepository();
             LaunchVehicleDto launchVehicle = _launchVehicleRepository.GetLaunchVehicleByName(name);
             if (launchVehicle == null)
             {

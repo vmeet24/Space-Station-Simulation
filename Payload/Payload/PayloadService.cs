@@ -20,18 +20,21 @@ namespace Payload
         private static Random random = new Random();
         private IPayloadRepository _payloadRepository;
 
+        public PayloadService()
+        {
+            _payloadRepository = WcfServiceFactory.GetPayloadRepository();
+        }
         public void StartPayload(string path)
         {
             if (path == null)
             {
                 throw new FaultException<ServiceFault>(new ServiceFault("File is invalid, please check the file and try again"));
             }
-            _payloadRepository = new PayloadRepository();
             PayloadDto payload = ReadConfigFile.GetVehicleDto(path);
             payload.IsActive = true;
             if (_payloadRepository.GetPayloadByName(payload.Name) != null)
             {
-                throw new FaultException<ServiceFault>(new ServiceFault("Vehicle with same name already present, please change the name of the vehicle"));
+                throw new FaultException<ServiceFault>(new ServiceFault("Payload with same name already present, please change the name of the payload"));
 
             }
             _payloadRepository.AddPayloads(payload);
@@ -42,7 +45,6 @@ namespace Payload
 
         public void DecommissionPayload(string name)
         {
-            _payloadRepository = new PayloadRepository();
             PayloadDto payload = _payloadRepository.GetPayloadByName(name);
             if (!payload.IsActive)
             {
@@ -54,13 +56,11 @@ namespace Payload
 
         public List<PayloadDto> GetPayloads()
         {
-            _payloadRepository = new PayloadRepository();
             return _payloadRepository.GetPayloads();
         }
 
         public void SendTelemetryRequest(string name, bool status)
         {
-            _payloadRepository = new PayloadRepository();
             PayloadDto payload = _payloadRepository.GetPayloadByName(name);
             IPayloadCallbackService data = OperationContext.Current.GetCallbackChannel<IPayloadCallbackService>();
             if (!_callbackList.Contains(data))
@@ -86,7 +86,6 @@ namespace Payload
 
         public void SendDataRequest(string name, bool status)
         {
-            _payloadRepository = new PayloadRepository();
             PayloadDto payload = _payloadRepository.GetPayloadByName(name);
             IPayloadCallbackService data = OperationContext.Current.GetCallbackChannel<IPayloadCallbackService>();
             if (!_callbackList.Contains(data))
@@ -113,7 +112,6 @@ namespace Payload
 
         private void InitiatePayload(string name)
         {
-            _payloadRepository = new PayloadRepository();
             PayloadDto payload = _payloadRepository.GetPayloadByName(name);
             while (payload.IsActive)
             {
@@ -134,7 +132,6 @@ namespace Payload
 
         private void InitiatePayloadData(string name)
         {
-            _payloadRepository = new PayloadRepository();
             PayloadDto payload = _payloadRepository.GetPayloadByName(name);
             while (payload.IsActive)
             {
