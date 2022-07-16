@@ -349,18 +349,18 @@ namespace DSN_UI
             try
             {
                 pClient.DecommissionPayload(item);
-                this.PayloadTelemetryRichTextBox.Clear();
-                this.PayloadDataRichTextBox.Clear();
-                this.pictureBox1.Visible = false;
-                this.currentPayloadSelected = String.Empty;
                 LoadData();
-                HidePayloadBtns();
-                MessageBox.Show("Decommissioned!!");
             }
             catch (FaultException<ServiceReference1.ServiceFault> fault)
             {
                 MessageBox.Show(fault.Detail.Message);
             }
+            this.PayloadTelemetryRichTextBox.Clear();
+            this.PayloadDataRichTextBox.Clear();
+            this.pictureBox1.Visible = false;
+            this.currentPayloadSelected = String.Empty;
+            HidePayloadBtns();
+            MessageBox.Show("Decommissioned!!");
         }
 
         private void PayloadComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -377,8 +377,15 @@ namespace DSN_UI
                     MessageBox.Show("Something went wrong, please try again");
                     return;
                 }
-                pClient.SendTelemetryRequest(item, false);
-                pClient.SendDataRequest(item, false);
+                try
+                {
+                    pClient.SendTelemetryRequest(item, false);
+                    pClient.SendDataRequest(item, false);
+                }
+                catch (FaultException<ServiceReference1.ServiceFault> fault)
+                {
+                    MessageBox.Show(fault.Detail.Message);
+                }
                 this.currentPayloadSelected = this.PayloadComboBox.SelectedItem.ToString();
                 ShowPayloadBtns();
                 this.PayloadTelemetryRichTextBox.Clear();

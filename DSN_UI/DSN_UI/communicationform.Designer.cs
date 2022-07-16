@@ -175,7 +175,7 @@
             this.DeployPayload.Location = new System.Drawing.Point(61, 165);
             this.DeployPayload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DeployPayload.Name = "DeployPayload";
-            this.DeployPayload.Size = new System.Drawing.Size(142, 45);
+            this.DeployPayload.Size = new System.Drawing.Size(142, 50);
             this.DeployPayload.TabIndex = 6;
             this.DeployPayload.Text = "Deploy Payload";
             this.DeployPayload.UseVisualStyleBackColor = true;
@@ -350,14 +350,15 @@
             // 
             // Upload
             // 
+            this.Upload.BackColor = System.Drawing.Color.Orange;
             this.Upload.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Upload.Location = new System.Drawing.Point(18, 910);
+            this.Upload.Location = new System.Drawing.Point(18, 891);
             this.Upload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Upload.Name = "Upload";
             this.Upload.Size = new System.Drawing.Size(266, 44);
             this.Upload.TabIndex = 0;
             this.Upload.Text = "Upload";
-            this.Upload.UseVisualStyleBackColor = true;
+            this.Upload.UseVisualStyleBackColor = false;
             this.Upload.Click += new System.EventHandler(this.Upload_Click);
             // 
             // openFileDialog1
