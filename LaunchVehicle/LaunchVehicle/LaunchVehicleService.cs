@@ -152,7 +152,7 @@ namespace LaunchVehicle
                 _launchVehicleRepository.DeleteLaunchVehicles(name);
                 SuspendThread(name);
             }
-            catch (ArgumentException ex)
+            catch (ArgumentException)
             {
                 throw new FaultException<ServiceFault>(new ServiceFault("Cannot derobit, vehicle with such name not found"));
             }
