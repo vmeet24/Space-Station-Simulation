@@ -63,6 +63,7 @@
     <Compile Include="ServiceFault.cs" />
     <Compile Include="Utility\ImageUtil.cs" />
     <Compile Include="Utility\ReadConfigFile.cs" />
+    <Compile Include="WcfServiceFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
