@@ -133,6 +133,7 @@
             // 
             // StopTelemetry
             // 
+            this.StopTelemetry.BackColor = System.Drawing.Color.SeaShell;
             this.StopTelemetry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StopTelemetry.Location = new System.Drawing.Point(333, 854);
             this.StopTelemetry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -140,11 +141,12 @@
             this.StopTelemetry.Size = new System.Drawing.Size(142, 41);
             this.StopTelemetry.TabIndex = 9;
             this.StopTelemetry.Text = "Stop Telemetry";
-            this.StopTelemetry.UseVisualStyleBackColor = true;
+            this.StopTelemetry.UseVisualStyleBackColor = false;
             this.StopTelemetry.Click += new System.EventHandler(this.StopTelemetry_Click);
             // 
             // StartTelemetry
             // 
+            this.StartTelemetry.BackColor = System.Drawing.Color.SeaShell;
             this.StartTelemetry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartTelemetry.Location = new System.Drawing.Point(61, 854);
             this.StartTelemetry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -152,7 +154,7 @@
             this.StartTelemetry.Size = new System.Drawing.Size(142, 41);
             this.StartTelemetry.TabIndex = 8;
             this.StartTelemetry.Text = "Start Telemetry";
-            this.StartTelemetry.UseVisualStyleBackColor = true;
+            this.StartTelemetry.UseVisualStyleBackColor = false;
             this.StartTelemetry.Click += new System.EventHandler(this.StartTelemetry_Click);
             // 
             // Deorbit
@@ -163,7 +165,7 @@
             this.Deorbit.Location = new System.Drawing.Point(351, 165);
             this.Deorbit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Deorbit.Name = "Deorbit";
-            this.Deorbit.Size = new System.Drawing.Size(102, 50);
+            this.Deorbit.Size = new System.Drawing.Size(124, 50);
             this.Deorbit.TabIndex = 7;
             this.Deorbit.Text = "Deorbit";
             this.Deorbit.UseVisualStyleBackColor = false;
@@ -171,6 +173,7 @@
             // 
             // DeployPayload
             // 
+            this.DeployPayload.BackColor = System.Drawing.Color.SeaShell;
             this.DeployPayload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeployPayload.Location = new System.Drawing.Point(61, 165);
             this.DeployPayload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -178,7 +181,7 @@
             this.DeployPayload.Size = new System.Drawing.Size(142, 50);
             this.DeployPayload.TabIndex = 6;
             this.DeployPayload.Text = "Deploy Payload";
-            this.DeployPayload.UseVisualStyleBackColor = true;
+            this.DeployPayload.UseVisualStyleBackColor = false;
             this.DeployPayload.Click += new System.EventHandler(this.button1_Click);
             // 
             // SelectLaunchVehicleComboBox
@@ -249,6 +252,7 @@
             // 
             // StopData
             // 
+            this.StopData.BackColor = System.Drawing.Color.Beige;
             this.StopData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StopData.Location = new System.Drawing.Point(385, 482);
             this.StopData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -256,11 +260,12 @@
             this.StopData.Size = new System.Drawing.Size(102, 50);
             this.StopData.TabIndex = 10;
             this.StopData.Text = "Stop Data";
-            this.StopData.UseVisualStyleBackColor = true;
+            this.StopData.UseVisualStyleBackColor = false;
             this.StopData.Click += new System.EventHandler(this.StopData_Click);
             // 
             // StartData
             // 
+            this.StartData.BackColor = System.Drawing.Color.Beige;
             this.StartData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartData.Location = new System.Drawing.Point(37, 484);
             this.StartData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -268,11 +273,12 @@
             this.StartData.Size = new System.Drawing.Size(142, 50);
             this.StartData.TabIndex = 10;
             this.StartData.Text = "Start Data";
-            this.StartData.UseVisualStyleBackColor = true;
+            this.StartData.UseVisualStyleBackColor = false;
             this.StartData.Click += new System.EventHandler(this.button9_Click);
             // 
             // StopTelemetryPayload
             // 
+            this.StopTelemetryPayload.BackColor = System.Drawing.Color.Cornsilk;
             this.StopTelemetryPayload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StopTelemetryPayload.Location = new System.Drawing.Point(345, 852);
             this.StopTelemetryPayload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -280,11 +286,12 @@
             this.StopTelemetryPayload.Size = new System.Drawing.Size(142, 45);
             this.StopTelemetryPayload.TabIndex = 14;
             this.StopTelemetryPayload.Text = "Stop Telemetry";
-            this.StopTelemetryPayload.UseVisualStyleBackColor = true;
+            this.StopTelemetryPayload.UseVisualStyleBackColor = false;
             this.StopTelemetryPayload.Click += new System.EventHandler(this.StopTelemetryPayload_Click);
             // 
             // StartTelemetryPayload
             // 
+            this.StartTelemetryPayload.BackColor = System.Drawing.Color.Beige;
             this.StartTelemetryPayload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartTelemetryPayload.Location = new System.Drawing.Point(50, 852);
             this.StartTelemetryPayload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -292,7 +299,7 @@
             this.StartTelemetryPayload.Size = new System.Drawing.Size(142, 45);
             this.StartTelemetryPayload.TabIndex = 13;
             this.StartTelemetryPayload.Text = "Start Telemetry";
-            this.StartTelemetryPayload.UseVisualStyleBackColor = true;
+            this.StartTelemetryPayload.UseVisualStyleBackColor = false;
             this.StartTelemetryPayload.Click += new System.EventHandler(this.StartTelemetryPayload_Click);
             // 
             // PayloadComboBox
@@ -308,7 +315,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel7.Location = new System.Drawing.Point(21, 216);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(488, 261);
