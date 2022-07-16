@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="31442e0a-b7c7-455b-b1a0-4b0c08498945" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8050/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="e7692060-8e87-4464-921d-431e632af831" SourceId="1" SourceUrl="net.tcp://localhost:8050/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="4ecc43dd-e02c-4731-8920-1dad34efdb5a" SourceId="1" SourceUrl="net.tcp://localhost:8050/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="5dc145d3-e5d2-4903-b6ae-6bb063e394f9" SourceId="1" SourceUrl="net.tcp://localhost:8050/mex" />
+    <MetadataFile FileName="Payload.xsd" MetadataType="Schema" ID="165d2cec-71c8-411f-bdef-fcd90ee6a6d3" SourceId="1" SourceUrl="net.tcp://localhost:8050/mex" />
+    <MetadataFile FileName="Payload.Dto.xsd" MetadataType="Schema" ID="cd5a97c0-e570-41bc-90f7-9b6bf4e208a0" SourceId="1" SourceUrl="net.tcp://localhost:8050/mex" />
+    <MetadataFile FileName="Payload.Enum.xsd" MetadataType="Schema" ID="b7bdc329-1409-4c97-9432-fb86999d4cb9" SourceId="1" SourceUrl="net.tcp://localhost:8050/mex" />
+    <MetadataFile FileName="Message.xsd" MetadataType="Schema" ID="84670692-a216-43eb-a543-58eef69bfb78" SourceId="1" SourceUrl="net.tcp://localhost:8050/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

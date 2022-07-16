@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="LaunchVehicleService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_ILaunchVehicleService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LaunchVehicle" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LaunchVehicle.Model" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LaunchVehicle.Dto" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILaunchVehicleService_AddVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddVehicle" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_AddVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_AddVehicle_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/LaunchVehicle" name="detail" element="q1:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_StartVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartVehicle" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_StartVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_StartVehicle_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/LaunchVehicle" name="detail" element="q2:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_SendTelemetryRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendTelemetryRequest" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_SendTelemetryRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTelemetryRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_GetVehicles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicles" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_GetVehicles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehiclesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_DeployPayload_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeployPayload" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_DeployPayload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeployPayloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_DeployPayload_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/LaunchVehicle" name="detail" element="q3:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_DeorbitLaunchVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeorbitLaunchVehicle" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_DeorbitLaunchVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeorbitLaunchVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_DeorbitLaunchVehicle_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/LaunchVehicle" name="detail" element="q4:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_NotifyTelemetryData_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyTelemetryData" />
+  </wsdl:message>
+  <wsdl:message name="ILaunchVehicleService_NotifyDeployStatus_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyDeployStatus" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="ILaunchVehicleService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AddVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILaunchVehicleService/AddVehicle" message="tns:ILaunchVehicleService_AddVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILaunchVehicleService/AddVehicleResponse" message="tns:ILaunchVehicleService_AddVehicle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILaunchVehicleService/AddVehicleServiceFaultFault" name="ServiceFaultFault" message="tns:ILaunchVehicleService_AddVehicle_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="StartVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILaunchVehicleService/StartVehicle" message="tns:ILaunchVehicleService_StartVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILaunchVehicleService/StartVehicleResponse" message="tns:ILaunchVehicleService_StartVehicle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILaunchVehicleService/StartVehicleServiceFaultFault" name="ServiceFaultFault" message="tns:ILaunchVehicleService_StartVehicle_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SendTelemetryRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILaunchVehicleService/SendTelemetryRequest" message="tns:ILaunchVehicleService_SendTelemetryRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILaunchVehicleService/SendTelemetryRequestResponse" message="tns:ILaunchVehicleService_SendTelemetryRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetVehicles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILaunchVehicleService/GetVehicles" message="tns:ILaunchVehicleService_GetVehicles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILaunchVehicleService/GetVehiclesResponse" message="tns:ILaunchVehicleService_GetVehicles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeployPayload">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILaunchVehicleService/DeployPayload" message="tns:ILaunchVehicleService_DeployPayload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILaunchVehicleService/DeployPayloadResponse" message="tns:ILaunchVehicleService_DeployPayload_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILaunchVehicleService/DeployPayloadServiceFaultFault" name="ServiceFaultFault" message="tns:ILaunchVehicleService_DeployPayload_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeorbitLaunchVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILaunchVehicleService/DeorbitLaunchVehicle" message="tns:ILaunchVehicleService_DeorbitLaunchVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILaunchVehicleService/DeorbitLaunchVehicleResponse" message="tns:ILaunchVehicleService_DeorbitLaunchVehicle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ILaunchVehicleService/DeorbitLaunchVehicleServiceFaultFault" name="ServiceFaultFault" message="tns:ILaunchVehicleService_DeorbitLaunchVehicle_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyTelemetryData">
+      <wsdl:output wsaw:Action="http://tempuri.org/ILaunchVehicleService/NotifyTelemetryData" message="tns:ILaunchVehicleService_NotifyTelemetryData_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyDeployStatus">
+      <wsdl:output wsaw:Action="http://tempuri.org/ILaunchVehicleService/NotifyDeployStatus" message="tns:ILaunchVehicleService_NotifyDeployStatus_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_ILaunchVehicleService" type="tns:ILaunchVehicleService">
+    <wsp:PolicyReference URI="#NetTcpBinding_ILaunchVehicleService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="AddVehicle">
+      <soap12:operation soapAction="http://tempuri.org/ILaunchVehicleService/AddVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap12:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StartVehicle">
+      <soap12:operation soapAction="http://tempuri.org/ILaunchVehicleService/StartVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap12:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendTelemetryRequest">
+      <soap12:operation soapAction="http://tempuri.org/ILaunchVehicleService/SendTelemetryRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicles">
+      <soap12:operation soapAction="http://tempuri.org/ILaunchVehicleService/GetVehicles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeployPayload">
+      <soap12:operation soapAction="http://tempuri.org/ILaunchVehicleService/DeployPayload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap12:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeorbitLaunchVehicle">
+      <soap12:operation soapAction="http://tempuri.org/ILaunchVehicleService/DeorbitLaunchVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap12:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyTelemetryData">
+      <soap12:operation soapAction="http://tempuri.org/ILaunchVehicleService/NotifyTelemetryData" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyDeployStatus">
+      <soap12:operation soapAction="http://tempuri.org/ILaunchVehicleService/NotifyDeployStatus" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LaunchVehicleService">
+    <wsdl:port name="NetTcpBinding_ILaunchVehicleService" binding="tns:NetTcpBinding_ILaunchVehicleService">
+      <soap12:address location="net.tcp://localhost:8090/LaunchVehicle" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/LaunchVehicle</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>MEET\meetv</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

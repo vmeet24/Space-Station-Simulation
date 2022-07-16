@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Payload.Enum" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Payload.Enum" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="PayloadType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Scientific" />
+      <xs:enumeration value="Communication" />
+      <xs:enumeration value="Spy" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PayloadType" nillable="true" type="tns:PayloadType" />
+</xs:schema>

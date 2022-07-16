@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="PayloadService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IPayloadService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IPayloadStartService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Payload" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Payload.Dto" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Payload.Enum" />
+      <xsd:import namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPayloadService_SendTelemetryRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendTelemetryRequest" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_SendTelemetryRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTelemetryRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_SendTelemetryRequest_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Payload" name="detail" element="q1:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_GetPayloads_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPayloads" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_GetPayloads_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPayloadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_DecommissionPayload_InputMessage">
+    <wsdl:part name="parameters" element="tns:DecommissionPayload" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_DecommissionPayload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DecommissionPayloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_DecommissionPayload_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Payload" name="detail" element="q2:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_SendDataRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendDataRequest" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_SendDataRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendDataRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_SendDataRequest_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Payload" name="detail" element="q3:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_NotifyPayloadTelemetryData_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPayloadTelemetryData" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_NotifyData_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyData" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadService_NotifyImage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyImage" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadStartService_StartPayload_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartPayload" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadStartService_StartPayload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartPayloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPayloadStartService_StartPayload_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Payload" name="detail" element="q4:ServiceFault" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IPayloadService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SendTelemetryRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayloadService/SendTelemetryRequest" message="tns:IPayloadService_SendTelemetryRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayloadService/SendTelemetryRequestResponse" message="tns:IPayloadService_SendTelemetryRequest_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPayloadService/SendTelemetryRequestServiceFaultFault" name="ServiceFaultFault" message="tns:IPayloadService_SendTelemetryRequest_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetPayloads">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayloadService/GetPayloads" message="tns:IPayloadService_GetPayloads_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayloadService/GetPayloadsResponse" message="tns:IPayloadService_GetPayloads_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DecommissionPayload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayloadService/DecommissionPayload" message="tns:IPayloadService_DecommissionPayload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayloadService/DecommissionPayloadResponse" message="tns:IPayloadService_DecommissionPayload_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPayloadService/DecommissionPayloadServiceFaultFault" name="ServiceFaultFault" message="tns:IPayloadService_DecommissionPayload_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SendDataRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayloadService/SendDataRequest" message="tns:IPayloadService_SendDataRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayloadService/SendDataRequestResponse" message="tns:IPayloadService_SendDataRequest_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPayloadService/SendDataRequestServiceFaultFault" name="ServiceFaultFault" message="tns:IPayloadService_SendDataRequest_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyPayloadTelemetryData">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayloadService/NotifyPayloadTelemetryData" message="tns:IPayloadService_NotifyPayloadTelemetryData_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyData">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayloadService/NotifyData" message="tns:IPayloadService_NotifyData_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyImage">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayloadService/NotifyImage" message="tns:IPayloadService_NotifyImage_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPayloadStartService">
+    <wsdl:operation name="StartPayload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPayloadStartService/StartPayload" message="tns:IPayloadStartService_StartPayload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPayloadStartService/StartPayloadResponse" message="tns:IPayloadStartService_StartPayload_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPayloadStartService/StartPayloadServiceFaultFault" name="ServiceFaultFault" message="tns:IPayloadStartService_StartPayload_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IPayloadService" type="tns:IPayloadService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IPayloadService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="SendTelemetryRequest">
+      <soap12:operation soapAction="http://tempuri.org/IPayloadService/SendTelemetryRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap12:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayloads">
+      <soap12:operation soapAction="http://tempuri.org/IPayloadService/GetPayloads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecommissionPayload">
+      <soap12:operation soapAction="http://tempuri.org/IPayloadService/DecommissionPayload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap12:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendDataRequest">
+      <soap12:operation soapAction="http://tempuri.org/IPayloadService/SendDataRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap12:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyPayloadTelemetryData">
+      <soap12:operation soapAction="http://tempuri.org/IPayloadService/NotifyPayloadTelemetryData" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyData">
+      <soap12:operation soapAction="http://tempuri.org/IPayloadService/NotifyData" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyImage">
+      <soap12:operation soapAction="http://tempuri.org/IPayloadService/NotifyImage" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IPayloadStartService" type="tns:IPayloadStartService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IPayloadStartService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="StartPayload">
+      <soap12:operation soapAction="http://tempuri.org/IPayloadStartService/StartPayload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceFaultFault">
+        <soap12:fault use="literal" name="ServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PayloadService">
+    <wsdl:port name="NetTcpBinding_IPayloadService" binding="tns:NetTcpBinding_IPayloadService">
+      <soap12:address location="net.tcp://localhost:8050/Payload" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8050/Payload</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IPayloadStartService" binding="tns:NetTcpBinding_IPayloadStartService">
+      <soap12:address location="net.tcp://localhost:8050/Payload" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8050/Payload</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
