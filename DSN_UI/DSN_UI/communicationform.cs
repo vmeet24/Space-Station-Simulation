@@ -96,12 +96,12 @@ namespace DSN_UI
                 try
                 {
                     lvClient.AddVehicle(filePath);
+                    LoadData();
                 }
-                catch (Exception ex)
+                catch (FaultException<ServiceReference2.ServiceFault> fault)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(fault.Detail.Message);
                 }
-                LoadData();
             }
         }
 
