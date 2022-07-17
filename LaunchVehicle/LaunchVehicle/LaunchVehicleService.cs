@@ -116,7 +116,7 @@ namespace LaunchVehicle
             }
             else if (launchVehicle.IsDeployed)
             {
-                throw new FaultException<ServiceFault>(new ServiceFault("Vehicle already deployed"));
+                throw new FaultException<ServiceFault>(new ServiceFault("Payload already deployed"));
             }
             else
             {

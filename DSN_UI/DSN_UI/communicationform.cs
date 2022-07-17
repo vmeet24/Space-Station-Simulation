@@ -2,6 +2,7 @@
 using DSN_UI.ServiceReference2;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.ServiceModel;
@@ -20,8 +21,16 @@ namespace DSN_UI
         private string currentVehicleSelected;
         private string currentPayloadSelected;
 
+        private class PayloadDatalcl
+        {
+            public string Name { get; set; }
+            public string Type { get; set; }
+        }
+        private List<PayloadDatalcl> payloadData;
+
         public communicationform()
         {
+            payloadData = new List<PayloadDatalcl>();
             InitializeComponent();
             InstanceContext instanceContext = new InstanceContext(this);
             _uiSyncContext = SynchronizationContext.Current;
@@ -59,6 +68,7 @@ namespace DSN_UI
             {
                 if (payload.IsActive)
                 {
+                    payloadData.Add(new PayloadDatalcl { Name = payload.Name, Type = payload.payloadType.ToString() });
                     this.PayloadComboBox.Items.Add(payload.Name);
                 }
             }
@@ -392,6 +402,9 @@ namespace DSN_UI
                 this.PayloadDataRichTextBox.Clear();
                 this.PayloadDataRichTextBox.Visible = false;
                 this.pictureBox1.Visible = false;
+                var data = this.payloadData.Find(x => x.Name == this.currentPayloadSelected);
+                this.label11.Visible = true;
+                this.label11.Text = data.Type;
             }
             else
             {
@@ -415,6 +428,7 @@ namespace DSN_UI
 
         private void HidePayloadBtns()
         {
+            this.label11.Visible = false;
             this.Decommission.Visible = false;
             this.StartData.Visible = false;
             this.StartTelemetryPayload.Visible = false;
