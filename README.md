@@ -9,7 +9,7 @@
   1. Click on the upload button to select the configuration file. 
    **Note that name of the Launch vehicle and payload should be unique**
   2. Dashboard will show the count of the waiting/active vehicle.
-  3. Select the waiting vehicle from the dropdown next to the launch vehicle button and launch it.
+  3. Select the waiting vehicle from the dropdown next to the launch vehicle button and launch it. **Note: You need to provide absolute path of the payload file in the launch vehicle configuration file.**
   4. It will update the dashboard.
   5. Now select the vehicle from the *Select Vehicle Section*.
   6. Buttons with the command name will appear on the dashboard.
