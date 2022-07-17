@@ -16,4 +16,4 @@
   7. Once notified ready for deploy, click on deploy button.
   8. Now, you will be able to see the Payload in dropdown from the  *Select a Payload Section*
   9. Similarly you can see the data sent by the payload.
-  10. Decommission/Deorbit the Payload/LaunchVechile as needed.
+  10. Decommission/Deorbit the Payload/LaunchVehicle as needed.
