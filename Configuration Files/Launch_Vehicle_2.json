@@ -1,6 +1,5 @@
 {
   "name": "Bird-2",
   "orbitInfo": 700,
-  "payLoad": "<Provide the path here>"
-
+ "payLoad": "<Provide you payload path here>"
 }
