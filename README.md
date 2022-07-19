@@ -6,8 +6,8 @@
 Video Link:- [Demo](https://www.youtube.com/watch?v=9Yz7VW8lvLI&ab_channel=MeetVora)
 
 ### How to run the program
-  1. Run the payload server in release mode.
-  2. Run the launch vehicle server in release mode.
+  1. Run the payload server in release mode. (Select PayloadHost as a startup project)
+  2. Run the launch vehicle server in release mode. (Select LaunchVehicle as a startup project)
   3. Run the DSN UI server in release mode.
   
 ### How to use the program
