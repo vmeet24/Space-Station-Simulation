@@ -14,7 +14,11 @@ Video Link:- [Demo](https://www.youtube.com/watch?v=9Yz7VW8lvLI&ab_channel=MeetV
   1. Click on the upload button to select the configuration file. 
    **Note that name of the Launch vehicle and payload should be unique**
   2. Dashboard will show the count of the waiting/active vehicle.
-  3. Select the waiting vehicle from the dropdown next to the launch vehicle button and launch it. **Note: You need to provide absolute path of the payload file in the launch vehicle configuration file.**
+  3. Select the waiting vehicle from the dropdown next to the launch vehicle button and launch it. 
+<img width="534" alt="image" src="https://user-images.githubusercontent.com/47553376/179638778-c7103086-b6bf-461a-9c16-4df5f4ebd40c.png">
+
+**Note: You need to provide absolute path of the payload file in the launch vehicle configuration file.**
+
   4. It will update the dashboard.
   5. Now select the vehicle from the *Select Vehicle Section*.
   6. Buttons with the command name will appear on the dashboard.
