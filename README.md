@@ -1,4 +1,4 @@
-# Intel
+# Space Station Simulation
 
 
 ### Getting Started
